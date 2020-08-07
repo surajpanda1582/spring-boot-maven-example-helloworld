@@ -4,7 +4,7 @@ MAINTAINER Suraj Panda
 
 COPY pom.xml /build/
 
-COPY src /build/src/main/
+COPY src/main /build/src
 
 WORKDIR /build/
 
