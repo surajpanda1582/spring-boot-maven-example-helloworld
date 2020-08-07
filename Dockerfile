@@ -2,9 +2,9 @@ FROM maven:3.5.2-jdk-8-alpine AS MAVEN_BUILD
 
 MAINTAINER Suraj Panda
 
-COPY /workspace/source/pom.xml /build/
+COPY pom.xml /build/
 
-COPY /workspace/source/src /build/src/
+COPY src /build/src/main/
 
 WORKDIR /build/
 
