@@ -12,8 +12,6 @@ RUN mvn package
 
 FROM openjdk:8-jre-alpine
 
-WORKDIR /app
-
-COPY --from=MAVEN_BUILD /build/target/SpringBootMavenExample-0.1.0.jar /app/
-
-ENTRYPOINT ["java", "-jar", "docker-boot-intro-0.1.0.jar"]
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
